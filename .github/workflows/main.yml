@@ -9,18 +9,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Ambil Kode (Checkout)
+    - name: Checkout Code
       uses: actions/checkout@v4
 
-    - name: Siapkan Python 3.12
+    - name: Set up Python 3.12
       uses: actions/setup-python@v4
       with:
         python-version: '3.12'
 
-    - name: Install MLflow & Dependencies
+    - name: Install Dependencies
       run: |
         pip install mlflow==2.19.0
         pip install pandas numpy scikit-learn matplotlib seaborn
 
     - name: Jalankan Project (MLflow Run)
-      run: mlflow run MLProject --no-conda
+      run: mlflow run MLProject --env-manager=local
