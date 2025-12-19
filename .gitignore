@@ -1,0 +1,15 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Environment
+.env
+venv/
+env/
+
+# MLflow logs
+mlruns/
+.trash/
+
+# VS Code settings
+.vscode/
