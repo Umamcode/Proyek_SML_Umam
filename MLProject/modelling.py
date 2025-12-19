@@ -24,7 +24,7 @@ def eval_metrics(actual, pred):
     return accuracy, precision, recall, f1
 
 def run_tuning_and_logging():  
-    mlflow.set_tracking_uri("http://127.0.0.1:5000/")
+    #mlflow.set_tracking_uri("http://127.0.0.1:5000/")
     mlflow.set_experiment("Eksperimen_Jantung_Umam")
         
     # Path data 
