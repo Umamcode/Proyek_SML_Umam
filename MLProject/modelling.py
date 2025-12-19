@@ -25,7 +25,7 @@ def eval_metrics(actual, pred):
 
 def run_tuning_and_logging():  
     #mlflow.set_tracking_uri("http://127.0.0.1:5000/")
-    mlflow.set_experiment("Eksperimen_Jantung_Umam")
+    #mlflow.set_experiment("Eksperimen_Jantung_Umam")
         
     # Path data 
     data_path = "heart_disease_clean.csv" 
@@ -66,7 +66,7 @@ def run_tuning_and_logging():
     # Logging ke MLflow
     print("[INFO] Logging to MLflow...")
     
-    with mlflow.start_run(run_name="Best_Model_Tuning"):
+    with mlflow.start_run(nested=True):
         mlflow.log_params(best_params)
         mlflow.log_metric("accuracy", acc)
         mlflow.log_metric("f1_score", f1)
